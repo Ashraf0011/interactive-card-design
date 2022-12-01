@@ -509,27 +509,19 @@ const CardHeader = ({ widths }) => {
             exp_year: Number(currentState.expYear),
             cvc: Number(currentState.cvc)
         }
-        const form = new FormData();
-        form.append('name', currentState.cardName);
-        form.append('card_number', Number(currentState.cardNumber));
-        form.append('exp_month', Number(currentState.expMonth));
-        form.append('exp_year', Number(currentState.expYear));
-        form.append('cvc', Number(currentState.cvc));
 
 
         var config = {
             method: 'post',
             url: 'https://card-server.vercel.app/create',
             headers: {
-                'Content-Type': 'multipart/form-data',
                 'X-Requested-With': 'XMLHttpRequest'
             },
-            withCredentials: true,
-            data: form
+            withCredentials: true
         };
 
         // console.log("details", CardDetails);
-        axios.post(config)
+        axios.post(config, CardDetails)
             .then(res => {
                 setThanks(true);
                 console.log("response", res.data);
