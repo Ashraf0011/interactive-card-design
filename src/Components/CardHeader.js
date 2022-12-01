@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import React, { useReducer, useRef, useState } from 'react';
+import React, { useReducer, useState } from 'react';
 import circle from '../images/icon-complete.svg'
 import bgsmall from '../images/bg-main-mobile.png';
 import bgls from '../images/bg-main-desktop.png';
@@ -31,21 +31,15 @@ const CardPage = styled.div`
     font-size: 12px;
     line-height: 22px;
     text-align: left;
-
     width: 100%;
-    /* margin: 0 auto; */
-
-
-
-
     display: flex;
     flex-direction: column;
     position: relative;
     transition: all cubic-bezier(0.165, 0.84, 0.44, 1);
     
-.danger{
-    color: orangered;
-}
+    .danger{
+        color: orangered;
+    }
 
     .bg{
         position: absolute;
@@ -515,7 +509,7 @@ const CardHeader = ({ widths }) => {
             cvc: Number(currentState.cvc)
         }
         // console.log("details", CardDetails);
-        axios.post('http://localhost:5002/create', CardDetails)
+        axios.post('https://card-server.vercel.app/create', CardDetails)
             .then(res => {
                 setThanks(true);
                 console.log("response", res.data);
@@ -638,22 +632,6 @@ const CardHeader = ({ widths }) => {
 
                                 <input className="smallI" name="CVC" value={currentState.cvc} onChange={(e) => dispatch({ type: "updateCVC", payload: e.target.value })} id="cardCVC" required placeholder="e.g. 123" ></input>
                                 {showCCVError ? <div className="danger"> <ErorMessage message={showCCVError} /> </div> : <></>}
-                                {/* <select name="MM" >
-                                    <option value="">MM</option>
-                                    {
-                                        untilM.map((i) =>
-                                            <option key={i * 3 + "i"} value={i}>{i}</option>
-                                        )
-                                    }
-                                </select>
-                                <select name="YY">
-                                    <option value="">YY</option>
-                                    {
-                                        untilY.map((i) =>
-                                            <option key={i * 2 + "i"} value={i}>{i}</option>
-                                        )
-                                    }
-                                </select> */}
                             </div>
                             <Button> Confirm </Button>
                         </form>
