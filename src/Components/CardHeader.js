@@ -8,7 +8,7 @@ import cback from '../images/bg-card-back.png'
 import logo from '../images/card-logo.svg'
 import { device } from "./GlobalStyle";
 import axios from "axios";
-const FormData = require('form-data');
+
 
 
 const Button = styled.button`
@@ -439,7 +439,7 @@ const CardHeader = ({ widths }) => {
                     } else if (newvalue.length > 2) {
                         const newLocal = "only 2 digits";
                         throw newLocal;
-                    } else if (newvalue == "0" || newvalue == "00" && newvalue != ("10" || "20" || "30" || "40" || "50" || "60" || "70" || "80" || "90") && newvalue != ("01" || "02" || "03" || "04" || "05" || "06" || "07" || "08" || "09")) {
+                    } else if ((newvalue === Number("0") || (newvalue === "00")) && newvalue !== ("10" || "20" || "30" || "40" || "50" || "60" || "70" || "80" || "90") && (newvalue !== (Number("01") || Number("02") || Number("03") || Number("04") || Number("05") || Number("06") || Number("07") || Number("08") || Number("09")))) {
                         const newLocal = "last 2 digits of year";
                         throw newLocal;
                     } else {
