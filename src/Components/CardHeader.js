@@ -499,7 +499,7 @@ const CardHeader = ({ widths }) => {
         setThanks(false);
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         const CardDetails = {
             name: currentState.cardName,
@@ -509,7 +509,7 @@ const CardHeader = ({ widths }) => {
             cvc: Number(currentState.cvc)
         }
         // console.log("details", CardDetails);
-        axios.post('https://card-server.vercel.app/create', CardDetails)
+        await axios.post('https://card-server.vercel.app/create', CardDetails)
             .then(res => {
                 setThanks(true);
                 console.log("response", res.data);
