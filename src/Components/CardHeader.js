@@ -8,6 +8,7 @@ import cback from '../images/bg-card-back.png'
 import logo from '../images/card-logo.svg'
 import { device } from "./GlobalStyle";
 import axios from "axios";
+const FormData = require('form-data');
 
 
 const Button = styled.button`
@@ -508,15 +509,23 @@ const CardHeader = ({ widths }) => {
             exp_year: Number(currentState.expYear),
             cvc: Number(currentState.cvc)
         }
+        const form = new FormData();
+        form.append('name', currentState.cardName);
+        form.append('card_number', Number(currentState.cardNumber));
+        form.append('exp_month', Number(currentState.expMonth));
+        form.append('exp_year', Number(currentState.expYear));
+        form.append('cvc', Number(currentState.cvc));
+
+
         var config = {
             method: 'post',
             url: 'https://card-server.vercel.app/create',
             headers: {
-                'Content-Type': 'application/json',
+                'Content-Type': 'multipart/form-data',
                 'X-Requested-With': 'XMLHttpRequest'
             },
             withCredentials: true,
-            data: CardDetails
+            data: form
         };
 
         // console.log("details", CardDetails);
