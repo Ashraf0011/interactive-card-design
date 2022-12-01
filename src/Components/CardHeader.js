@@ -499,7 +499,7 @@ const CardHeader = ({ widths }) => {
         setThanks(false);
     }
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
         const CardDetails = {
             name: currentState.cardName,
@@ -508,8 +508,19 @@ const CardHeader = ({ widths }) => {
             exp_year: Number(currentState.expYear),
             cvc: Number(currentState.cvc)
         }
+        var config = {
+            method: 'post',
+            url: 'https://card-server.vercel.app/create',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-Requested-With': 'XMLHttpRequest'
+            },
+            withCredentials: true,
+            data: CardDetails
+        };
+
         // console.log("details", CardDetails);
-        await axios.post('https://card-server.vercel.app/create', CardDetails)
+        axios.post(config)
             .then(res => {
                 setThanks(true);
                 console.log("response", res.data);
