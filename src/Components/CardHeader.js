@@ -509,8 +509,6 @@ const CardHeader = ({ widths }) => {
         }
 
         var config = {
-            method: 'post',
-            url: 'https://card-server.vercel.app/api/create/',
             headers: {
                 'X-Requested-With': 'XMLHttpRequest'
             },
@@ -518,7 +516,7 @@ const CardHeader = ({ widths }) => {
         };
 
 
-        await axios.post(config, CardDetails)
+        await axios.post('https://card-server.vercel.app/api/create/', CardDetails, config,)
             .then(res => {
                 setThanks(true);
                 console.log("response", res.data);

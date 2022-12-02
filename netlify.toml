@@ -1,9 +1,11 @@
-[build]
-    command = "npm run build"
-    publish = "/build"
-    base = "/"
+Settings in the [build] context are global and are applied to
+ # all contexts unless otherwise overridden by more specific contexts.
+ [build]
+     functions: "netlify_functions"
 
-[[redirects]]
-    from = "/*"
-    to = "/index.html"
-    status = 200
+ [[headers]]
+   # Define which paths this specific [[headers]] block will cover.
+   for = "/*"
+
+   [headers.values]
+    Access-Control-Request-Headers: content-type
