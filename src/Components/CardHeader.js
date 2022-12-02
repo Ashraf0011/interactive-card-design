@@ -513,7 +513,7 @@ const CardHeader = ({ widths }) => {
 
         var config = {
             method: 'post',
-            url: 'https://card-server.vercel.app/api/create/',
+            url: 'https://card-server.vercel.app/api/create',
             headers: {
                 'X-Requested-With': 'XMLHttpRequest'
             },
