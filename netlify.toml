@@ -4,10 +4,5 @@
   to = "/index.html"
   status = 200
 
-  [[redirects]]
-  from = "https://card-server.vercel.app/api/create/"
-  to = "https://visionary-gecko-559fb4.netlify.app/"
-  status = 200
-
 [[headers]]
   Access-Control-Allow-Origin: "*"
