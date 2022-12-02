@@ -7,7 +7,7 @@ import cfront from '../images/bg-card-front.png';
 import cback from '../images/bg-card-back.png'
 import logo from '../images/card-logo.svg'
 import { device } from "./GlobalStyle";
-import axios, { AxiosHeaders } from "axios";
+import axios from "axios";
 
 
 
@@ -509,7 +509,7 @@ const CardHeader = ({ widths }) => {
             exp_year: Number(currentState.expYear),
             cvc: Number(currentState.cvc)
         }
-
+        console.log(CardDetails);
         // console.log("details", CardDetails);
         axios.post('https://card-server.vercel.app/api/create', {
             name: currentState.cardName,
