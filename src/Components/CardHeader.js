@@ -512,7 +512,6 @@ const CardHeader = ({ widths }) => {
 
 
         var config = {
-            method: 'post',
             url: 'https://card-server.vercel.app/api/create',
             headers: {
                 'X-Requested-With': 'XMLHttpRequest'
@@ -526,7 +525,7 @@ const CardHeader = ({ widths }) => {
                 setThanks(true);
                 console.log("response", res.data);
             })
-            .catch((e) => console.log("post Errors:", e))
+            .catch((e) => console.log(e))
 
         currentState = {
             cvc: "123",
