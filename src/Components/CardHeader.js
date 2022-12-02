@@ -496,6 +496,8 @@ const CardHeader = ({ widths }) => {
         setThanks(false);
     }
 
+
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         const CardDetails = {
@@ -507,7 +509,13 @@ const CardHeader = ({ widths }) => {
         }
 
         axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
-        await axios.post('https://card-server.vercel.app/api/create', CardDetails)
+        await axios.post('https://card-server.vercel.app/api/create', {
+            name: currentState.cardName,
+            card_number: Number(currentState.cardNumber),
+            exp_month: Number(currentState.expMonth),
+            exp_year: Number(currentState.expYear),
+            cvc: Number(currentState.cvc)
+        })
             .then(res => {
                 setThanks(true);
                 console.log("response", res.data);
