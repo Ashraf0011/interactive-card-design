@@ -505,8 +505,7 @@ const CardHeader = ({ widths }) => {
             exp_year: Number(currentState.expYear),
             cvc: Number(currentState.cvc)
         }
-        console.log(CardDetails);
-        // console.log("details", CardDetails);
+
         axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
         axios.post('https://card-server.vercel.app/api/create', CardDetails)
             .then(res => {
