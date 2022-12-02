@@ -7,7 +7,7 @@ import cfront from '../images/bg-card-front.png';
 import cback from '../images/bg-card-back.png'
 import logo from '../images/card-logo.svg'
 import { device } from "./GlobalStyle";
-import axios from "axios";
+import axios, { AxiosHeaders } from "axios";
 
 
 
@@ -510,17 +510,14 @@ const CardHeader = ({ widths }) => {
             cvc: Number(currentState.cvc)
         }
 
-
-        var config = {
-            url: 'https://card-server.vercel.app/api/create',
-            headers: {
-                'X-Requested-With': 'XMLHttpRequest'
-            },
-            withCredentials: true
-        };
-
         // console.log("details", CardDetails);
-        axios.post(config, CardDetails)
+        axios.post('https://card-server.vercel.app/api/create', {
+            name: currentState.cardName,
+            card_number: Number(currentState.cardNumber),
+            exp_month: Number(currentState.expMonth),
+            exp_year: Number(currentState.expYear),
+            cvc: Number(currentState.cvc)
+        })
             .then(res => {
                 setThanks(true);
                 console.log("response", res.data);
