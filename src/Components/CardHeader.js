@@ -284,10 +284,6 @@ const CardPage = styled.div`
 
     }
 
-
-
-
-
 }
 
 
@@ -511,13 +507,8 @@ const CardHeader = ({ widths }) => {
         }
         console.log(CardDetails);
         // console.log("details", CardDetails);
-        axios.post('https://card-server.vercel.app/api/create', {
-            name: currentState.cardName,
-            card_number: Number(currentState.cardNumber),
-            exp_month: Number(currentState.expMonth),
-            exp_year: Number(currentState.expYear),
-            cvc: Number(currentState.cvc)
-        })
+        axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+        axios.post('https://card-server.vercel.app/api/create', CardDetails)
             .then(res => {
                 setThanks(true);
                 console.log("response", res.data);
