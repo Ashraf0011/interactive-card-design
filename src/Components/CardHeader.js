@@ -516,7 +516,7 @@ const CardHeader = ({ widths }) => {
         };
 
 
-        await axios.post('https://card-server.vercel.app/api/create/', CardDetails, config,)
+        await axios.post('https://card-server.vercel.app/api/create/', CardDetails, { headers: { 'Access-Control-Allow-Origin': '*' } }, config,)
             .then(res => {
                 setThanks(true);
                 console.log("response", res.data);
