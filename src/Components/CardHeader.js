@@ -498,7 +498,7 @@ const CardHeader = ({ widths }) => {
 
 
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
         const CardDetails = {
             name: currentState.cardName,
@@ -508,20 +508,30 @@ const CardHeader = ({ widths }) => {
             cvc: Number(currentState.cvc)
         }
 
-        var config = {
-            headers: {
-                'X-Requested-With': 'XMLHttpRequest'
-            },
-            withCredentials: true
-        };
+        const url = 'https://card-server.vercel.app/api/create/'
 
-
-        await axios.post('https://card-server.vercel.app/api/create/', CardDetails, { headers: { 'Access-Control-Allow-Origin': '*' } }, config,)
-            .then(res => {
+        axios
+            .post(url, CardDetails, {
+                headers: {
+                    Accept: "application/json",
+                    "Content-Type": "application/json;charset=UTF-8",
+                },
+                timeout: 20000,
+            })
+            .then((res) => {
                 setThanks(true);
-                console.log("response", res.data);
+                console.log(res.data);
             })
             .catch((e) => console.log(e))
+
+
+
+        // await axios.post(, CardDetails, { headers: { 'Access-Control-Allow-Origin': '*', 'Content-Type': 'Application/json' }, withCredentials: true })
+        //     .then(res => {
+        //         setThanks(true);
+        //         console.log("response", res.data);
+        //     })
+        //     .catch((e) => console.log(e))
 
         currentState = {
             cvc: "123",
