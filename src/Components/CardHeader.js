@@ -181,7 +181,7 @@ const CardPage = styled.div`
         
         width: 375px;
         height: 400px;
-        margin:  200px 100px;
+        margin:  auto;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -282,6 +282,10 @@ const CardPage = styled.div`
         
        }
 
+    }
+
+    .thanks{
+        margin: 200px 100px;
     }
 
 }
