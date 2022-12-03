@@ -319,11 +319,11 @@ const CardHeader = ({ widths }) => {
 
 
     let initialState = {
-        cvc: "123",
-        cardNumber: "1234567890123",
+        cvc: "000",
+        cardNumber: "0000000000000000",
         cardName: "JANE APPLESEED",
-        expMonth: "10",
-        expYear: "24",
+        expMonth: "00",
+        expYear: "00",
         mesg: ""
     }
 
@@ -384,6 +384,9 @@ const CardHeader = ({ widths }) => {
                     let newvalue = action.payload;
                     if (newvalue.match(/[a-z|A-Z\D\W/gi]/)) {
                         const newLocal = "Worng formate,  Only Numbers are allowed";
+                        throw newLocal;
+                    } else if (newvalue.length > 16) {
+                        const newLocal = "Only 16 digits";
                         throw newLocal;
                     } else {
                         seteNbE("");
@@ -524,21 +527,13 @@ const CardHeader = ({ widths }) => {
             })
             .catch((e) => console.log(e))
 
-
-
-        // await axios.post(, CardDetails, { headers: { 'Access-Control-Allow-Origin': '*', 'Content-Type': 'Application/json' }, withCredentials: true })
-        //     .then(res => {
-        //         setThanks(true);
-        //         console.log("response", res.data);
-        //     })
-        //     .catch((e) => console.log(e))
-
         currentState = {
-            cvc: "123",
-            cardNumber: "1234567890123",
+            cvc: "000",
+            cardNumber: "0000000000000000",
             cardName: "JANE APPLESEED",
-            expMonth: "10",
-            expYear: "24",
+            expMonth: "00",
+            expYear: "00",
+            mesg: ""
         };
         // console.log(currentState);
 
@@ -643,13 +638,14 @@ const CardHeader = ({ widths }) => {
                                 <label htmlFor="expiry Month and Year">EXP.DATE(MM/YY) </label>
                                 <label htmlFor="CVC">CVC </label>
                                 <input className="smallI" name="Month" value={expMonth} onChange={(e) => dispatch({ type: "updateMonth", payload: e.target.value })} id="expM" required placeholder="MM"></input>
-                                <input className="smallI" name="Year" value={expYear} onChange={(e) => dispatch({ type: "updateYear", payload: e.target.value })} id="expY" required placeholder="TT"></input>
+                                <input className="smallI" name="Year" value={expYear} onChange={(e) => dispatch({ type: "updateYear", payload: e.target.value })} id="expY" required placeholder="YY"></input>
                                 {showMonthError ? <div className="danger"> <ErorMessage message={showMonthError} />  </div> : <></>}
                                 {showYearError ? <div className="danger"> <ErorMessage message={showYearError} />  </div> : <></>}
 
                                 <input className="smallI" name="CVC" value={currentState.cvc} onChange={(e) => dispatch({ type: "updateCVC", payload: e.target.value })} id="cardCVC" required placeholder="e.g. 123" ></input>
                                 {showCCVError ? <div className="danger"> <ErorMessage message={showCCVError} /> </div> : <></>}
                             </div>
+                            <> <h3 className="danger">please DO NOT fill actual card details!!</h3> </>
                             <Button> Confirm </Button>
                         </form>
                     </div>
