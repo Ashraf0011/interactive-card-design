@@ -98,9 +98,6 @@ way to organise them differently.
   [@Ashraf0011](https://www.frontendmentor.io/profile/Ashraf0011)
 - Twitter - [@Ashraf_SIndex](https://www.twitter.com/Ashraf_SIndex)
 
-**Note: Delete this note and add/remove/edit lines above based on what links
-you'd like to share.**
-
 ## Acknowledgments
 
 I would like to thank my mentor Md Didarul Islam for his effort to answer all my
