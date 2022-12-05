@@ -1,70 +1,110 @@
-# Getting Started with Create React App
+# Frontend Mentor - Interactive card details form solution
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a solution to the
+[Interactive card details form challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/interactive-card-details-form-XpS8cKZDWw).
+Frontend Mentor challenges help you improve your coding skills by building
+realistic projects.
 
-## Available Scripts
+## Table of contents
 
-In the project directory, you can run:
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
+  - [Useful resources](#useful-resources)
+- [Author](#author)
+- [Acknowledgments](#acknowledgments)
 
-### `npm start`
+**Note: Delete this note and update the table of contents based on what sections
+you keep.**
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Overview
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Primary challange was to build the website as close as possible to the original
+design materials. I have gone one step further to connect to a hosted databse
+and to practise my learnig. It was quiet challanging to accomplish all the
+validation using useReducer hoock, but i was able to achieve the goal. 🫡
 
-### `npm test`
+### The challenge
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Users should be able to:
 
-### `npm run build`
+- Fill in the form and see the card details update in real-time
+- Receive error messages when the form is submitted if:
+  - Any input field is empty
+  - The card number, expiry date, or CVC fields are in the wrong format
+- View the optimal layout depending on their device's screen size
+- Card number is saved in vercel server.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## (please avoid inserting, your card details. Just fill up dummy information).
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Screenshot
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#### Deskpot view
 
-### `npm run eject`
+![](./ss1.png)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+#### Error messages
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![](./ss2.png)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Links
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- Solution URL:
+  [Add solution URL here](https://github.com/Ashraf0011/interactive-card-design.git)
+- Live Site URL:
+  [Add live site URL here](https://interactive-card-design-ten.vercel.app/)
 
-## Learn More
+## My process
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Built with
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- React
+- Styled components
+- Flexbox
+- CSS Grid
+- Mobile-first workflow, However only 2 device sizes were developed
+- [React](https://reactjs.org/) - JS library
+- [Styled Components](https://styled-components.com/) - For styles
 
-### Code Splitting
+### What I learned
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+This project was really a good project for me. it helped me learning reducer,
+and dispatcher functions properly. at some stage I have connected the app with
+MongoBD data base, schema validation was really challanging, not to mention, the
+complexity of sending data between two different hostig Vercel (used for
+backend) and Netlify (used for fronend).
 
-### Analyzing the Bundle Size
+### Continued development
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+I would like to add feates like edit and delete a card in the future. I feel
+still I need more knowledge on github. it was too much to commit and push every
+single changes during last minute change. That's real headech. code structure
+was not very organised in this project which gave me a hard time specially
+styled components and and making them responsive later on. I'll have to find a
+way to organise them differently.
 
-### Making a Progressive Web App
+### Useful resources
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- [Axios Help](https://blog.logrocket.com/axios-vs-fetch-best-http-requests/) -
+  This helped me to solve cors problem. I really liked this pattern and will use
+  it going forward.
 
-### Advanced Configuration
+## Author
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- Website - [Md Ashraful islam ](https://ashrafs.info)
+- Frontend Mentor -
+  [@Ashraf0011](https://www.frontendmentor.io/profile/Ashraf0011)
+- Twitter - [@Ashraf_SIndex](https://www.twitter.com/Ashraf_SIndex)
 
-### Deployment
+**Note: Delete this note and add/remove/edit lines above based on what links
+you'd like to share.**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## Acknowledgments
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+I would lIke to thank my mentor Md Didarul islam for his effort all my silly
+questions. I't becomes really painful to satisfy my q's some times 🥴.
