@@ -19,9 +19,6 @@ realistic projects.
 - [Author](#author)
 - [Acknowledgments](#acknowledgments)
 
-**Note: Delete this note and update the table of contents based on what sections
-you keep.**
-
 ## Overview
 
 Primary challange was to build the website as close as possible to the original
@@ -106,5 +103,5 @@ you'd like to share.**
 
 ## Acknowledgments
 
-I would lIke to thank my mentor Md Didarul islam for his effort all my silly
-questions. I't becomes really painful to satisfy my q's some times 🥴.
+I would like to thank my mentor Md Didarul Islam for his effort to answer all my
+silly questions. I't becomes really painful to satisfy my q's some times 🥴.
